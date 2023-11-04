@@ -9,3 +9,6 @@ Projucer/
 *.suo
 *.user
 *.userprefs
+# Remove the exclusion for your "Resources" folder and its contents
+!Resources/
+!Resources/NavigatorIcons/
