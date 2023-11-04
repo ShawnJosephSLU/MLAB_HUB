@@ -1,0 +1,11 @@
+# JUCE-specific ignores
+.juce/
+Builds/
+JuceLibraryCode/
+Projucer/
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs

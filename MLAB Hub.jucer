@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="gof4wz" name="MLAB Hub" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="0" jucerFormatVersion="1">
+  <MAINGROUP id="j5CBEX" name="MLAB Hub">
+    <GROUP id="{08063AB3-C7DE-89A8-BA43-2AA510181140}" name="Models">
+      <GROUP id="{642CDED6-4306-930C-A358-2D5650648048}" name="ColourPalette">
+        <FILE id="uu6ciq" name="ColourPalette.cpp" compile="1" resource="0"
+              file="Source/ColourPalette.cpp"/>
+        <FILE id="hmUm6D" name="ColourPalette.h" compile="0" resource="0" file="Source/ColourPalette.h"/>
+      </GROUP>
+    </GROUP>
+    <GROUP id="{931F1D31-43B0-3FCD-5230-CDA7CD936C84}" name="ViewController">
+      <GROUP id="{D8519EFA-46B2-7105-48DD-5435F31EE5B4}" name="Pages">
+        <GROUP id="{F6BF19E3-5082-E297-2EA1-8C447FCFDDA2}" name="NotificationsPage">
+          <FILE id="QvS1uH" name="NotificationsPage.cpp" compile="1" resource="0"
+                file="Source/NotificationsPage.cpp"/>
+          <FILE id="Vv54Qy" name="NotificationsPage.h" compile="0" resource="0"
+                file="Source/NotificationsPage.h"/>
+        </GROUP>
+        <GROUP id="{CDDEF41A-C909-DC8D-D80E-B273EFDE406F}" name="AccountPage">
+          <FILE id="HsdFAi" name="AccountPage.cpp" compile="1" resource="0" file="Source/AccountPage.cpp"/>
+          <FILE id="NxamfR" name="AccountPage.h" compile="0" resource="0" file="Source/AccountPage.h"/>
+        </GROUP>
+        <GROUP id="{619E688B-B009-FD33-F62F-6DB663651644}" name="NewsPage">
+          <FILE id="ALViLE" name="NewsPage.cpp" compile="1" resource="0" file="Source/NewsPage.cpp"/>
+          <FILE id="yZ5yLv" name="NewsPage.h" compile="0" resource="0" file="Source/NewsPage.h"/>
+        </GROUP>
+        <GROUP id="{A51F31D9-0E4F-C726-3620-CD09CF152A08}" name="ProductsPage">
+          <FILE id="momImd" name="ProductsPage.cpp" compile="1" resource="0"
+                file="Source/ProductsPage.cpp"/>
+          <FILE id="U34mlT" name="ProductsPage.h" compile="0" resource="0" file="Source/ProductsPage.h"/>
+        </GROUP>
+        <GROUP id="{866EE5A3-DE49-53A6-0850-2554C06D958B}" name="SettingsPage">
+          <FILE id="QgXdcw" name="SettingsPage.cpp" compile="1" resource="0"
+                file="Source/SettingsPage.cpp"/>
+          <FILE id="hApXXW" name="SettingsPage.h" compile="0" resource="0" file="Source/SettingsPage.h"/>
+        </GROUP>
+        <GROUP id="{30D1B4E0-3573-362F-2CB9-2F2EF22FFB34}" name="HomePage">
+          <FILE id="xtrNRh" name="HomePage.cpp" compile="1" resource="0" file="Source/HomePage.cpp"/>
+          <FILE id="KoKZiX" name="HomePage.h" compile="0" resource="0" file="Source/HomePage.h"/>
+        </GROUP>
+      </GROUP>
+      <GROUP id="{CE8DEEC9-1ECC-ADF0-3DEA-FDACE8440CCC}" name="Resources">
+        <FILE id="kqT7tY" name="mlabHubBtn.png" compile="0" resource="1" file="../../../Library/Mobile Documents/com~apple~CloudDocs/Desktop/ButtonIcons/mlabHubBtn.png"/>
+        <GROUP id="{C6ADEDA1-2D6B-BED9-FF7D-9089D9B526C4}" name="NavigatorIcons">
+          <FILE id="AQKDXU" name="notification_btn.png" compile="0" resource="1"
+                file="../../../Desktop/Icons/notification_btn.png"/>
+          <FILE id="HfbVPp" name="settings_btn.png" compile="0" resource="1"
+                file="../../../Desktop/Icons/settings_btn.png"/>
+          <FILE id="NvihVh" name="news_btn.png" compile="0" resource="1" file="../../../Desktop/Icons/news_btn.png"/>
+          <FILE id="ujEJlG" name="account_btn_default.png" compile="0" resource="1"
+                file="../../../Desktop/Icons/account_btn_default.png"/>
+          <FILE id="A1FDNM" name="products.png" compile="0" resource="1" file="../../../Desktop/Icons/products.png"/>
+          <FILE id="UU83ht" name="home_btn.png" compile="0" resource="1" file="../../../Desktop/Icons/home_btn.png"/>
+        </GROUP>
+      </GROUP>
+      <GROUP id="{4D142590-D19A-0FA1-8010-6BEF4D206830}" name="PageNavigator">
+        <FILE id="raz2Wn" name="PageNavigator.cpp" compile="1" resource="0"
+              file="Source/PageNavigator.cpp"/>
+        <FILE id="FTn2K9" name="PageNavigator.h" compile="0" resource="0" file="Source/PageNavigator.h"/>
+      </GROUP>
+      <GROUP id="{9980AAF3-190A-B159-8B2C-B9876041AE31}" name="Source">
+        <FILE id="QAGAKj" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+        <FILE id="NQrYaY" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+        <FILE id="Kc9FSN" name="MainComponent.cpp" compile="1" resource="0"
+              file="Source/MainComponent.cpp"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <XCODE_IPHONE targetFolder="Builds/iOS" extraDefs="JUCE_SILENCE_XCODE_15_LINKER_WARNING "
+                  iosScreenOrientation="UIInterfaceOrientationPortrait" iPadScreenOrientation="UIInterfaceOrientationPortrait"
+                  smallIcon="kqT7tY" bigIcon="kqT7tY">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="MLAB Hub"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="MLAB Hub"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_IPHONE>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
