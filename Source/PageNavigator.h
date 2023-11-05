@@ -12,6 +12,9 @@
 
 #include <JuceHeader.h>
 #include "PageNavigator.h"
+#include "ColourPalette.h"
+#include "ImageManager.h"
+#include "ML_ImageButton.h"
 
 //==============================================================================
 
@@ -34,36 +37,29 @@ public:
     void paint (juce::Graphics&) override;
     void resized() override;
     
-    juce::ImageButton& getHomeButton() { return m_HomeBtn; }
-    juce::ImageButton& getNewsButton() { return m_NewsBtn; }
-    juce::ImageButton& getNotificationsButton() { return m_NotificationBtn; }
-    juce::ImageButton& getProductsButton() { return m_ProductsBtn; }
-    juce::ImageButton& getAccountButton() { return m_UserAccountBtn; }
-    juce::ImageButton& getSettingsButton() { return m_SettingsBtn; }
+    ML_ImageButton& getHomeButton() { return m_HomeBtn; }
+    ML_ImageButton& getNewsButton() { return m_NewsBtn; }
+    ML_ImageButton& getNotificationsButton() { return m_NotificationBtn; }
+    ML_ImageButton& getProductsButton() { return m_ProductsBtn; }
+    ML_ImageButton& getAccountButton() { return m_UserAccountBtn; }
+    ML_ImageButton& getSettingsButton() { return m_SettingsBtn; }
     
     ButtonType& getClickedButton() {return buttonClicked;}
 
 
 private:
-    juce::ImageButton m_HomeBtn;
-    juce::ImageButton m_NewsBtn;
-    juce::ImageButton m_NotificationBtn;
-    juce::ImageButton m_ProductsBtn;
-    juce::ImageButton m_UserAccountBtn;
-    juce::ImageButton m_SettingsBtn;
+    ML_ImageButton m_HomeBtn;
+    ML_ImageButton m_NewsBtn;
+    ML_ImageButton m_NotificationBtn;
+    ML_ImageButton m_ProductsBtn;
+    ML_ImageButton m_UserAccountBtn;
+    ML_ImageButton m_SettingsBtn;
 
     
-    //button images
-    const juce::Image m_HomeBtnImg = juce::ImageCache::getFromMemory(BinaryData::home_btn_png, BinaryData::home_btn_pngSize);
-    const juce::Image m_NewsBtnImg = juce::ImageCache::getFromMemory(BinaryData::news_btn_png, BinaryData::news_btn_pngSize);
-    const juce::Image m_NotificationBtnImg = juce::ImageCache::getFromMemory(BinaryData::notification_btn_png, BinaryData::notification_btn_pngSize);
-    const juce::Image m_ProductsBtnImg = juce::ImageCache::getFromMemory(BinaryData::products_png, BinaryData::products_pngSize);
-    const juce::Image m_SettingsBtnImg = juce::ImageCache::getFromMemory(BinaryData::settings_btn_png, BinaryData::settings_btn_pngSize);
-    const juce::Image m_UserAccountBtnImg = juce::ImageCache::getFromMemory(BinaryData::account_btn_default_png, BinaryData::account_btn_default_pngSize);
 
     
     // private Methods
-    void setButtonWithImage(juce::ImageButton &btn, juce::Image img);
+    void setButtonsWithImage();
     
     // is button active flags
     bool isHomeBtnActive = false;

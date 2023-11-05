@@ -12,6 +12,7 @@
 
 #include <JuceHeader.h>
 #include "ColourPalette.h"
+#include "PageTile.h"
 
 //==============================================================================
 /*
@@ -38,6 +39,7 @@ private:
         void resized() override;
         
     private:
+        PageTile tempTile1, tempTile2,tempTile3,tempTile4,tempTile5 ; // this is a temp tile for testing
         
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HomePageViewedContent)
     };

@@ -3,7 +3,45 @@
 <JUCERPROJECT id="gof4wz" name="MLAB Hub" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="0" jucerFormatVersion="1">
   <MAINGROUP id="j5CBEX" name="MLAB Hub">
+    <GROUP id="{CE8DEEC9-1ECC-ADF0-3DEA-FDACE8440CCC}" name="Resources">
+      <FILE id="kqT7tY" name="mlabHubBtn.png" compile="0" resource="1" file="../../../Library/Mobile Documents/com~apple~CloudDocs/Desktop/ButtonIcons/mlabHubBtn.png"/>
+      <GROUP id="{C6ADEDA1-2D6B-BED9-FF7D-9089D9B526C4}" name="NavigatorIcons">
+        <FILE id="sKqJYP" name="dark_mode_account_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/dark_mode_account_page_icon.png"/>
+        <FILE id="Tjmy7N" name="dark_mode_settings_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/dark_mode_settings_page_icon.png"/>
+        <FILE id="L9yxET" name="light_mode_account_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_account_page_icon.png"/>
+        <FILE id="gAZb1Z" name="light_mode_settings_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_settings_page_icon.png"/>
+        <FILE id="RND62T" name="light_mode_notifications_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_notifications_page_icon.png"/>
+        <FILE id="V1nq2S" name="dark_mode_notifications_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/dark_mode_notifications_page_icon.png"/>
+        <FILE id="s8blpg" name="dark_mode_home_page_icon.png" compile="0" resource="1"
+              file="Resources/NavigatorIcons/dark_mode_home_page_icon.png"/>
+        <FILE id="dbptsE" name="dark_mode_products_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/dark_mode_products_page_icon.png"/>
+        <FILE id="d35u0w" name="light_mode_products_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_products_page_icon.png"/>
+        <FILE id="vVVlcx" name="light_mode_home_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_home_page_icon.png"/>
+        <FILE id="L1PFg9" name="light_mode_news_page_icon.png" compile="0"
+              resource="1" file="Resources/NavigatorIcons/light_mode_news_page_icon.png"/>
+        <FILE id="rMnlqG" name="dark_mode_news_page_icon.png" compile="0" resource="1"
+              file="Resources/NavigatorIcons/dark_mode_news_page_icon.png"/>
+      </GROUP>
+    </GROUP>
+    <GROUP id="{4F6607F3-7B74-8106-A2D9-C176A5243970}" name="PageTile">
+      <FILE id="OZm3zb" name="PageTile.cpp" compile="1" resource="0" file="Source/PageTile.cpp"/>
+      <FILE id="Wlp32a" name="PageTile.h" compile="0" resource="0" file="Source/PageTile.h"/>
+    </GROUP>
     <GROUP id="{08063AB3-C7DE-89A8-BA43-2AA510181140}" name="Models">
+      <GROUP id="{A69364E8-C3B2-D7EA-52BD-BBA2FAABF31A}" name="ImageManager">
+        <FILE id="h7kvql" name="ImageManager.cpp" compile="1" resource="0"
+              file="Source/ImageManager.cpp"/>
+        <FILE id="PZNA20" name="ImageManager.h" compile="0" resource="0" file="Source/ImageManager.h"/>
+      </GROUP>
       <GROUP id="{642CDED6-4306-930C-A358-2D5650648048}" name="ColourPalette">
         <FILE id="uu6ciq" name="ColourPalette.cpp" compile="1" resource="0"
               file="Source/ColourPalette.cpp"/>
@@ -11,6 +49,12 @@
       </GROUP>
     </GROUP>
     <GROUP id="{931F1D31-43B0-3FCD-5230-CDA7CD936C84}" name="ViewController">
+      <GROUP id="{C6FAD211-F35B-AF11-E1A5-C639BBE3B30C}" name="ImageButton">
+        <FILE id="qMFtes" name="ML_ImageButton.cpp" compile="1" resource="0"
+              file="Source/ML_ImageButton.cpp"/>
+        <FILE id="HgMuOC" name="ML_ImageButton.h" compile="0" resource="0"
+              file="Source/ML_ImageButton.h"/>
+      </GROUP>
       <GROUP id="{D8519EFA-46B2-7105-48DD-5435F31EE5B4}" name="Pages">
         <GROUP id="{F6BF19E3-5082-E297-2EA1-8C447FCFDDA2}" name="NotificationsPage">
           <FILE id="QvS1uH" name="NotificationsPage.cpp" compile="1" resource="0"
@@ -39,20 +83,6 @@
         <GROUP id="{30D1B4E0-3573-362F-2CB9-2F2EF22FFB34}" name="HomePage">
           <FILE id="xtrNRh" name="HomePage.cpp" compile="1" resource="0" file="Source/HomePage.cpp"/>
           <FILE id="KoKZiX" name="HomePage.h" compile="0" resource="0" file="Source/HomePage.h"/>
-        </GROUP>
-      </GROUP>
-      <GROUP id="{CE8DEEC9-1ECC-ADF0-3DEA-FDACE8440CCC}" name="Resources">
-        <FILE id="kqT7tY" name="mlabHubBtn.png" compile="0" resource="1" file="../../../Library/Mobile Documents/com~apple~CloudDocs/Desktop/ButtonIcons/mlabHubBtn.png"/>
-        <GROUP id="{C6ADEDA1-2D6B-BED9-FF7D-9089D9B526C4}" name="NavigatorIcons">
-          <FILE id="AQKDXU" name="notification_btn.png" compile="0" resource="1"
-                file="../../../Desktop/Icons/notification_btn.png"/>
-          <FILE id="HfbVPp" name="settings_btn.png" compile="0" resource="1"
-                file="../../../Desktop/Icons/settings_btn.png"/>
-          <FILE id="NvihVh" name="news_btn.png" compile="0" resource="1" file="../../../Desktop/Icons/news_btn.png"/>
-          <FILE id="ujEJlG" name="account_btn_default.png" compile="0" resource="1"
-                file="../../../Desktop/Icons/account_btn_default.png"/>
-          <FILE id="A1FDNM" name="products.png" compile="0" resource="1" file="../../../Desktop/Icons/products.png"/>
-          <FILE id="UU83ht" name="home_btn.png" compile="0" resource="1" file="../../../Desktop/Icons/home_btn.png"/>
         </GROUP>
       </GROUP>
       <GROUP id="{4D142590-D19A-0FA1-8010-6BEF4D206830}" name="PageNavigator">

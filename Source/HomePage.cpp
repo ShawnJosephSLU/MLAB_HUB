@@ -38,6 +38,11 @@ void HomePage::resized()
 
 HomePage::HomePageViewedContent::HomePageViewedContent() { // constructor of the content view
    
+    this->addAndMakeVisible(tempTile1);
+    this->addAndMakeVisible(tempTile2);
+    this->addAndMakeVisible(tempTile3);
+    this->addAndMakeVisible(tempTile4);
+    this->addAndMakeVisible(tempTile5);
 
 
 }
@@ -76,6 +81,12 @@ void HomePage::HomePageViewedContent::paint(juce::Graphics & g){ // paint method
 }
 
 void HomePage::HomePageViewedContent::resized() { // resized method of the content view
+    
+    tempTile1.setBounds(0, 0, getWidth(), getWidth());
+    tempTile2.setBounds(0, tempTile1.getBottom() + 10, getWidth() - 0, getWidth());
+    tempTile3.setBounds(0, tempTile2.getBottom() + 10, getWidth() - 0, getWidth());
+    tempTile4.setBounds(0, tempTile3.getBottom() + 10, getWidth() - 0, getWidth());
+    tempTile5.setBounds(0, tempTile4.getBottom() + 10, getWidth() - 0, getWidth());
     
     
     

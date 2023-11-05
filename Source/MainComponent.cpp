@@ -49,7 +49,7 @@ void MainComponent::paint (juce::Graphics& g)
 
     }
     else {
-        g.fillAll(ColourPalette::getLightModeBgColour());
+        g.fillAll(juce::Colours::white);
 
     }
 }
@@ -59,7 +59,6 @@ void MainComponent::resized()
     auto area = getLocalBounds();
     area.removeFromTop(50);
     
-    m_PageNavigator.setBounds(area.removeFromBottom(100).reduced(20, 20));
     auto pageArea = area;
     
     
@@ -87,6 +86,9 @@ void MainComponent::resized()
         }; break;
             
     }
+    
+    m_PageNavigator.setBounds(20, getHeight() - 80, getWidth() - 40, 60);
+    m_PageNavigator.toFront(true);
     
    
 }
