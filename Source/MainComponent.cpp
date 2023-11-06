@@ -58,7 +58,7 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized()
 {
     auto area = getLocalBounds();
-    auto appHeaderArea = area.removeFromTop(100);
+    auto appHeaderArea = area.removeFromTop(120);
     auto pageArea = area;
     
     m_AppHeader.setBounds(appHeaderArea);
