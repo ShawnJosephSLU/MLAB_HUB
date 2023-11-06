@@ -40,7 +40,7 @@ HomePage::HomePageViewedContent::HomePageViewedContent() { // constructor of the
     std::vector<Data*> dataList_temp;
     dataList_temp.push_back(&data_temp);
     
-    int n = 15; //create "n" temp tile
+    int n = 8; //create "n" temp tile
     for(int i = 0; i < n; i++){
         createNewDataTile(dataList_temp);
     }

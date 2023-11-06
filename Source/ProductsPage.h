@@ -12,7 +12,8 @@
 
 #include <JuceHeader.h>
 #include "ColourPalette.h"
-
+#include "PageTile.h"
+#include "Data.h"
 //==============================================================================
 /*
 */
@@ -35,7 +36,14 @@ private:
 
         void paint(juce::Graphics&) override;
         void resized() override;
+        void createNewDataTile(std::vector<Data*> data); //TODO: Not sure if this should me a limited or unlimtied vecto
+        int getPageHeight() {return m_PageHeight;}
     private:
+        //vector of tiles based on data from from the data model
+        std::vector<PageTile*> m_ProductsDataTiles;  //TODO: figure out a way to use smart pointers for auto garbage collection
+        
+        //stores the value of the bottom of the page
+        int m_PageHeight;
         
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ProductsPageViewedContent)
     };
