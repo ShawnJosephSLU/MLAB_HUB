@@ -3,6 +3,10 @@
 <JUCERPROJECT id="gof4wz" name="MLAB Hub" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="0" jucerFormatVersion="1">
   <MAINGROUP id="j5CBEX" name="MLAB Hub">
+    <GROUP id="{2348125E-36F9-0B81-9118-446A1557D548}" name="Networking">
+      <FILE id="tv8Uve" name="Networking .cpp" compile="1" resource="0" file="Source/Networking .cpp"/>
+      <FILE id="ALgTdp" name="Networking .h" compile="0" resource="0" file="Source/Networking .h"/>
+    </GROUP>
     <GROUP id="{CE8DEEC9-1ECC-ADF0-3DEA-FDACE8440CCC}" name="Resources">
       <FILE id="kqT7tY" name="mlabHubBtn.png" compile="0" resource="1" file="../../../Library/Mobile Documents/com~apple~CloudDocs/Desktop/ButtonIcons/mlabHubBtn.png"/>
       <GROUP id="{C6ADEDA1-2D6B-BED9-FF7D-9089D9B526C4}" name="NavigatorIcons">
