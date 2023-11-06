@@ -49,6 +49,14 @@
       </GROUP>
     </GROUP>
     <GROUP id="{931F1D31-43B0-3FCD-5230-CDA7CD936C84}" name="ViewController">
+      <GROUP id="{4B0F51AF-ED6B-0585-4D2C-5B006AA78E0A}" name="AppHeader">
+        <FILE id="KrpzAD" name="AppHeader.cpp" compile="1" resource="0" file="Source/AppHeader.cpp"/>
+        <FILE id="TtpMEo" name="AppHeader.h" compile="0" resource="0" file="Source/AppHeader.h"/>
+      </GROUP>
+      <GROUP id="{C81B33F8-30EA-AA9F-6BF3-189FC02B2D91}" name="Data">
+        <FILE id="UwpCWZ" name="Data.cpp" compile="1" resource="0" file="Source/Data.cpp"/>
+        <FILE id="A8qv2y" name="Data.h" compile="0" resource="0" file="Source/Data.h"/>
+      </GROUP>
       <GROUP id="{C6FAD211-F35B-AF11-E1A5-C639BBE3B30C}" name="ImageButton">
         <FILE id="qMFtes" name="ML_ImageButton.cpp" compile="1" resource="0"
               file="Source/ML_ImageButton.cpp"/>
@@ -90,12 +98,12 @@
               file="Source/PageNavigator.cpp"/>
         <FILE id="FTn2K9" name="PageNavigator.h" compile="0" resource="0" file="Source/PageNavigator.h"/>
       </GROUP>
-      <GROUP id="{9980AAF3-190A-B159-8B2C-B9876041AE31}" name="Source">
-        <FILE id="QAGAKj" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-        <FILE id="NQrYaY" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-        <FILE id="Kc9FSN" name="MainComponent.cpp" compile="1" resource="0"
-              file="Source/MainComponent.cpp"/>
-      </GROUP>
+    </GROUP>
+    <GROUP id="{9980AAF3-190A-B159-8B2C-B9876041AE31}" name="Source">
+      <FILE id="QAGAKj" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="NQrYaY" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="Kc9FSN" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>

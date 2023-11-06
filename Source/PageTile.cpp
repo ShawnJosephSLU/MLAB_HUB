@@ -14,7 +14,11 @@
 //==============================================================================
 PageTile::PageTile()
 {
-   
+   //TODO: temp Size of the tile should be changed to be dynamic based on the data
+    setSize(
+            this->getParentWidth(), //width of the tile
+            300 // height should be dynamic;
+            );
 }
 
 PageTile::~PageTile()
@@ -34,17 +38,7 @@ void PageTile::paint (juce::Graphics& g)
     
     g.fillRoundedRectangle(getLocalBounds().toFloat(), 0);
     
-    if(juce::Desktop::getInstance().isDarkModeActive() == true){
-        g.setColour(ColourPalette::getDarkModeMainTextColour());
-        
-    }
-    else {
-        g.setColour(ColourPalette::getLightModeMainTextColour());
-    }
-    
-    g.setFont(14.0f);
-    g.drawText("Page Tile", getLocalBounds(), juce::Justification::centred, true);
-    
+   
 }
 
 void PageTile::resized()

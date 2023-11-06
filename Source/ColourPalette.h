@@ -20,7 +20,7 @@ public:
 
     // Get the background color for the light mode
     static juce::Colour getLightModeBgColour() {
-        return juce::Colour(230,230,230);
+        return juce::Colour(200,200,200);
     }
     
     

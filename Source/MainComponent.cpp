@@ -6,6 +6,7 @@ MainComponent::MainComponent()
     addAndMakeVisible(m_PageNavigator);
     m_CurrentPageID = PageID::Home;
     addAndMakeVisible(m_HomePage);
+    addAndMakeVisible(m_AppHeader);
     setSize(600, 400);
 
     m_PageNavigator.getHomeButton().onClick = [&] {
@@ -57,10 +58,10 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized()
 {
     auto area = getLocalBounds();
-    area.removeFromTop(50);
-    
+    auto appHeaderArea = area.removeFromTop(100);
     auto pageArea = area;
     
+    m_AppHeader.setBounds(appHeaderArea);
     
     m_HomePage.setBounds(pageArea);
    

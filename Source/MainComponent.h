@@ -8,6 +8,7 @@
 #include "NewsPage.h"
 #include "SettingsPage.h"
 #include "NotificationsPage.h"
+#include "AppHeader.h"
 
 
 //==============================================================================
@@ -57,6 +58,7 @@ private:
     NewsPage m_NewsPage;
     SettingsPage m_SettingsPage;
     NotificationsPage m_NotificationsPage;
+    AppHeader m_AppHeader;
     
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
