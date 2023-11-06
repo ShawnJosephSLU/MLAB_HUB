@@ -88,6 +88,8 @@ void SettingsPage::SettingsPageViewedContent::resized() { // resized method of t
     // set the position of the tiles
     auto area = getLocalBounds();
     int spacerSize = 1;
+    area.removeFromTop(spacerSize); //adds 1px of space above the first tile
+
     
     for (int i = 0 ; i <  m_SettingsPageDataTiles.size(); i++) {
         m_SettingsPageDataTiles[i]->setBounds(area.removeFromTop(80));

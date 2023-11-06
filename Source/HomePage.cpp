@@ -89,6 +89,9 @@ void HomePage::HomePageViewedContent::resized() { // resized method of the conte
     auto area = getLocalBounds();
     int spacerSize = 1;
     
+    area.removeFromTop(spacerSize); //add 1px of space above the first tile
+
+    
     for (int i = 0 ; i <  m_HomeDataTiles.size(); i++) {
         m_HomeDataTiles[i]->setBounds(area.removeFromTop(300));
         area.removeFromTop(spacerSize);

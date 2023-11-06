@@ -29,5 +29,7 @@ public:
 
 private:
     std::vector<Data*> m_DataList;
+    
+    juce::String TileID ; //TODO:  make this the unique id of tile and create the getter method for it . ID must be hashed
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PageTile)
 };

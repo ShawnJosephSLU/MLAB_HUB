@@ -89,6 +89,8 @@ void NotificationsPage::NotificationsPageViewedContent::resized() { // resized m
     // set the position of the tiles
     auto area = getLocalBounds();
     int spacerSize = 1;
+    area.removeFromTop(spacerSize); //add 1px of space above the first tile
+
     
     for (int i = 0 ; i <  m_NotificationsPageTiles.size(); i++) {
         m_NotificationsPageTiles[i]->setBounds(area.removeFromTop(80));

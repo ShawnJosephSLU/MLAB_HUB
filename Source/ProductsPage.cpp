@@ -89,6 +89,8 @@ void ProductsPage::ProductsPageViewedContent::resized() { // resized method of t
     // set the position of the tiles
     auto area = getLocalBounds();
     int spacerSize = 1;
+    area.removeFromTop(spacerSize); //add 1px of space above the first tile
+
     
     for (int i = 0 ; i <  m_ProductsDataTiles.size(); i++) {
         m_ProductsDataTiles[i]->setBounds(area.removeFromTop(300));

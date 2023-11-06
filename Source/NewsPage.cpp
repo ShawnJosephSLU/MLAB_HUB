@@ -89,6 +89,8 @@ void NewsPage::NewsPageViewedContent::resized() { // resized method of the conte
     // set the position of the tiles
     auto area = getLocalBounds();
     int spacerSize = 1;
+    area.removeFromTop(spacerSize); //add 1px of space above the first tile
+
     
     for (int i = 0 ; i <  m_NewsPageTiles.size(); i++) {
         m_NewsPageTiles[i]->setBounds(area.removeFromTop(300));

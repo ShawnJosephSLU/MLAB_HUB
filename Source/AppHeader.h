@@ -23,7 +23,9 @@ public:
 
     void paint (juce::Graphics&) override;
     void resized() override;
+    juce::Label& getHeaderLabel(){return m_HeaderLabel;}
 
 private:
+    juce::Label m_HeaderLabel;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AppHeader)
 };

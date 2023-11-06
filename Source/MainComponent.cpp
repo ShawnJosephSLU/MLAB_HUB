@@ -3,6 +3,8 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
+    m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+//    m_AppHeader.repaint();
     addAndMakeVisible(m_PageNavigator);
     m_CurrentPageID = PageID::Home;
     addAndMakeVisible(m_HomePage);
@@ -108,6 +110,9 @@ void MainComponent::openHomePage() {
 
     addAndMakeVisible(m_HomePage);
     m_HomePage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
@@ -127,6 +132,9 @@ void MainComponent::openNewsPage() {
 
     addAndMakeVisible(m_NewsPage);
     m_NewsPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("News", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
@@ -146,6 +154,9 @@ void MainComponent::openAccountPage() {
 
     addAndMakeVisible(m_AccountPage);
     m_AccountPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Account", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
@@ -165,6 +176,9 @@ void MainComponent::openNotificationsPage() {
 
     addAndMakeVisible(m_NotificationsPage);
     m_NotificationsPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Notifications", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
@@ -184,6 +198,9 @@ void MainComponent::openSettingsPage() {
 
     addAndMakeVisible(m_SettingsPage);
     m_SettingsPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Settings", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
@@ -203,6 +220,9 @@ void MainComponent::openProductsPage() {
 
     addAndMakeVisible(m_ProductsPage);
     m_ProductsPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Products", juce::dontSendNotification);
+    m_AppHeader.repaint();
 
     repaint();
     resized();
