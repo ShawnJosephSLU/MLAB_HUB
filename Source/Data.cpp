@@ -25,13 +25,6 @@ Data::~Data()
 
 void Data::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
-
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (juce::Colours::grey);
@@ -45,7 +38,6 @@ void Data::paint (juce::Graphics& g)
 
 void Data::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
+    
 
 }

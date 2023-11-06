@@ -15,6 +15,10 @@
 //==============================================================================
 /*
 */
+enum class DataType {
+    Image, Audio, Video, Text, NoData
+};
+
 class Data  : public juce::Component
 {
 public:
@@ -25,5 +29,7 @@ public:
     void resized() override;
 
 private:
+    DataType m_DataType = DataType::NoData;
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Data)
 };
