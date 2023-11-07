@@ -15,6 +15,7 @@
 #include "ColourPalette.h"
 #include "ImageManager.h"
 #include "ML_ImageButton.h"
+#include "Networking.h"
 
 //==============================================================================
 
@@ -45,7 +46,7 @@ public:
     ML_ImageButton& getSettingsButton() { return m_SettingsBtn; }
     
     ButtonType& getClickedButton() {return buttonClicked;}
-
+    NotificationCount& getNotifcationCounter() {return m_NotificationCounter;}
 
 private:
     ML_ImageButton m_HomeBtn;
@@ -60,6 +61,9 @@ private:
     
     // private Methods
     void setButtonsWithImage();
+    void drawNotificationCounter();
+    
+    //============================================================
     
     // is button active flags
     bool isHomeBtnActive = false;
@@ -74,6 +78,11 @@ private:
     
     // this is the colour of the button when it is active
     juce::Colour buttonColour = juce::Colours::transparentBlack;
+    
+    
+    //notitfication counter
+    NotificationCount m_NotificationCounter;
+    
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PageNavigator)
 };

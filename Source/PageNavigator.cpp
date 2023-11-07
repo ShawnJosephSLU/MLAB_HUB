@@ -10,13 +10,14 @@
 
 #include <JuceHeader.h>
 #include "PageNavigator.h"
-
+#include "Networking.h"
 
 //==============================================================================
 PageNavigator::PageNavigator()
 {
     setButtonsWithImage();
- 
+    addAndMakeVisible(m_NotificationCounter);
+    
 }
 
 PageNavigator::~PageNavigator()
@@ -46,7 +47,6 @@ void PageNavigator::paint(juce::Graphics& g)
         ML_ImageButton& button;
     };
 
-    // 
     ButtonInfo buttonInfos[] = {
         {isHomeBtnActive, m_HomeBtn},
         {isNewsBtnActive, m_NewsBtn},
@@ -77,6 +77,10 @@ void PageNavigator::paint(juce::Graphics& g)
                                    buttonInfo.button.getY() - 12, 6, 6, 3);
         }
     }
+    
+    
+    drawNotificationCounter(); //draws the notification counter and adjusts the size
+    
 }
 
 
@@ -101,6 +105,9 @@ void PageNavigator::resized()
     area.removeFromLeft(spacerSize);
     m_NotificationBtn.setBounds(area.removeFromLeft(buttonSize));
     area.removeFromLeft(spacerSize);
+    
+    
+   
 
 }
 
@@ -120,8 +127,56 @@ void PageNavigator::setButtonsWithImage() {
     addAndMakeVisible(m_SettingsBtn);
     addAndMakeVisible(m_NotificationBtn);
     addAndMakeVisible(m_UserAccountBtn);
+    
+    // set which buttons can display notifications
+    m_NotificationBtn.setAsNotificationBtn(true);
+   
+    
 
 }
+//===================================================================================================
+void PageNavigator::drawNotificationCounter() {
+    // if the button is a notification counter and the count is > 0  display the counter
+    if(Networking::getNotificationValue() > 0 && Networking::getNotificationValue() < 10 ) {
+        m_NotificationCounter.setVisible(true);
+        m_NotificationCounter.setBounds(
+                                        m_NotificationBtn.getX() + m_NotificationBtn.getWidth() / 2,
+                                        m_NotificationBtn.getY() + 2,
+                                        16,
+                                        16
+                                        );
+    
+        
+    }//increase the width of the counter if value is above 10 and less that 100
+    else if(Networking::getNotificationValue() >= 10 && Networking::getNotificationValue() < 100) {
+        
+        m_NotificationCounter.setVisible(true);
+        m_NotificationCounter.setBounds(
+                                        m_NotificationBtn.getX()  + m_NotificationBtn.getWidth() / 2,
+                                        m_NotificationBtn.getY() + 2,
+                                        24,
+                                        16
+                                        );
+       
+        
+    }
+    
+    else if(Networking::getNotificationValue() >= 100) {
+        
+        m_NotificationCounter.setVisible(true);
+        m_NotificationCounter.setBounds(
+                                        m_NotificationBtn.getX()  + m_NotificationBtn.getWidth() / 2,
+                                        m_NotificationBtn.getY() + 2,
+                                        24,
+                                        16
+                                        );
+        
+    }
+    else {
+        m_NotificationCounter.setVisible(false);
+    }
+}
+//======================================================================================================
 
 
 

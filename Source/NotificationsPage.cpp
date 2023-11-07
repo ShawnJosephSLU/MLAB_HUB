@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "NotificationsPage.h"
+#include "Networking.h"
 
 NotificationsPage::NotificationsPage()
 {
@@ -51,6 +52,7 @@ NotificationsPage::NotificationsPageViewedContent::NotificationsPageViewedConten
     // add The tile to the viewedContent
     for (PageTile* dataTile : m_NotificationsPageTiles ) {
         addAndMakeVisible(dataTile);
+        Networking::incrementNotificationValue();
     }
     
     

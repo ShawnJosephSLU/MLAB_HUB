@@ -14,7 +14,7 @@
 //==============================================================================
 ML_ImageButton::ML_ImageButton()
 {
-    
+    this->setInterceptsMouseClicks(true, true);
 }
 
 ML_ImageButton::~ML_ImageButton()
@@ -30,7 +30,7 @@ void ML_ImageButton::paint (juce::Graphics& g)
     else {
         g.drawImage(m_LightModeButtonImage, getLocalBounds().toFloat());
     }
-   
+    
 }
 
 void ML_ImageButton::resized()

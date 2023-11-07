@@ -9,6 +9,7 @@
 #include "SettingsPage.h"
 #include "NotificationsPage.h"
 #include "AppHeader.h"
+#include "Networking.h"
 
 
 //==============================================================================

@@ -11,11 +11,14 @@
 #pragma once
 #include "Data.h"
 
-/**
- This class is resposible for making HTTP requests to the MLAB API and packaging the response into a Data object
- */
-
 class Networking {
-    
-    
+public:
+    static int getNotificationValue();
+    static void incrementNotificationValue();
+    static void decrementNotificationValue();
+
+private:
+    static int m_NumberOfNotifications; // TODO: this should be passed from the Database;
 };
+
+

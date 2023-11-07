@@ -54,8 +54,20 @@ void MainComponent::paint(juce::Graphics& g)
 
     hideNavbar(); // Hide the navbar when scrolled
 
+    static int lastNotificationValue = -1; // Initialize with an impossible value
 
+    int currentNotificationValue = Networking::getNotificationValue();
+
+    if (currentNotificationValue != lastNotificationValue) {
+        // The notification value has changed, update the counter
+        m_PageNavigator.getNotifcationCounter().setValue(currentNotificationValue);
+        DBG("Notifications = " << currentNotificationValue);
+        
+        // Update the last known value
+        lastNotificationValue = currentNotificationValue;
+    }
 }
+
 
 
 
