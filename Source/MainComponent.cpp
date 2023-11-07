@@ -55,8 +55,8 @@ void MainComponent::paint(juce::Graphics& g)
     int currentPos = m_HomePage.getScrollPosition();
     int scrollDelta = currentPos - temp_pos;
 
-    // Define the ratio of scroll to movement (2 pixels per unit of scroll)
-    int movement = 2 * scrollDelta;
+    // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+    int movement = 1 * scrollDelta;
 
     // Calculate the new Y position
     int newY = m_PageNavigator.getY() + movement;
