@@ -60,6 +60,10 @@ private:
     NotificationsPage m_NotificationsPage;
     AppHeader m_AppHeader;
     
+   
+    int minNavLimit, maxNavLimit;
+    int temp_pos; 
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

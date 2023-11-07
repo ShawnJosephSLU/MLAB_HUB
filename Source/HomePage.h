@@ -27,7 +27,10 @@ public:
     HomePage();
     ~HomePage(){}
     void resized() override;
+    void paint(juce::Graphics&) override;
 
+    // stores the scroll position of the viewport
+    int getScrollPosition() {return m_ScrollPosition;}
 private:
     
     //=========================================================
@@ -58,6 +61,7 @@ private:
     
     HomePageViewedContent m_ViewedContent;
     juce::Viewport viewport;
+    int m_ScrollPosition;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HomePage)
 };

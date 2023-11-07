@@ -31,6 +31,11 @@ void HomePage::resized()
     m_ViewedContent.setBounds(0, 0, getWidth(), m_ViewedContent.getPageHeight());
     
 }
+
+void HomePage::paint(juce::Graphics &) { 
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
+
 //========================================================================================
 
 HomePage::HomePageViewedContent::HomePageViewedContent() { // constructor of the content view

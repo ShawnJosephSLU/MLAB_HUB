@@ -4,7 +4,9 @@
 MainComponent::MainComponent()
 {
     m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
-//    m_AppHeader.repaint();
+    // Initialize temp_pos to an initial value
+        temp_pos = 0;
+    
     addAndMakeVisible(m_PageNavigator);
     m_CurrentPageID = PageID::Home;
     addAndMakeVisible(m_HomePage);
@@ -44,18 +46,33 @@ MainComponent::~MainComponent()
 {
 }
 
-//==============================================================================
-void MainComponent::paint (juce::Graphics& g)
+void MainComponent::paint(juce::Graphics& g)
 {
-    if(juce::Desktop::getInstance().isDarkModeActive() == true){
-        g.fillAll(ColourPalette::getDarkModeBgColour());
+    g.fillAll(juce::Desktop::getInstance().isDarkModeActive()
+        ? ColourPalette::getDarkModeBgColour()
+        : juce::Colours::white);
 
-    }
-    else {
-        g.fillAll(juce::Colours::white);
+    int currentPos = m_HomePage.getScrollPosition();
+    int scrollDelta = currentPos - temp_pos;
 
-    }
+    // Define the ratio of scroll to movement (2 pixels per unit of scroll)
+    int movement = 2 * scrollDelta;
+
+    // Calculate the new Y position
+    int newY = m_PageNavigator.getY() + movement;
+
+    // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+    newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+    m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+        m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+    temp_pos = currentPos;
+
 }
+
+
+
 
 void MainComponent::resized()
 {
@@ -92,6 +109,13 @@ void MainComponent::resized()
     
     m_PageNavigator.setBounds(20, getHeight() - 80, getWidth() - 40, 60);
     m_PageNavigator.toFront(true);
+    
+    
+    // set the min and max value for navbar posy
+    minNavLimit = m_PageNavigator.getY();
+    maxNavLimit = m_PageNavigator.getY() + 82;
+    
+
     
    
 }
