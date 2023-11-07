@@ -31,9 +31,6 @@ public:
     void resized() override;
     
     
-
-
-    
     // open pages methods
     void openHomePage();
 

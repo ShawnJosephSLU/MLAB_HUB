@@ -26,61 +26,9 @@ PageNavigator::~PageNavigator()
 
 void PageNavigator::paint(juce::Graphics& g)
 {
-
-    
-    if(juce::Desktop::getInstance().isDarkModeActive() == true){
-        g.setColour(ColourPalette::getDarkModeNavBarColour());
-        
-    }
-    else {
-        g.setColour(ColourPalette::getLightModeNavBarColour());
-    }
-    g.fillRoundedRectangle(getLocalBounds().toFloat(), getHeight() / 2);
-
-    
-    
-    
-// opened page indicator logic
-   
-    struct ButtonInfo {
-        bool& isActive;
-        ML_ImageButton& button;
-    };
-
-    ButtonInfo buttonInfos[] = {
-        {isHomeBtnActive, m_HomeBtn},
-        {isNewsBtnActive, m_NewsBtn},
-        {isNotificationBtnActive, m_NotificationBtn},
-        {isProductsBtnActive, m_ProductsBtn},
-        {isUserAccountBtnActive, m_UserAccountBtn},
-        {isSettingsBtnActive, m_SettingsBtn}
-    };
-
-    for (const ButtonInfo& buttonInfo : buttonInfos) {
-        buttonInfo.isActive = false;
-        if(juce::Desktop::getInstance().isDarkModeActive() == true){
-            g.setColour(ColourPalette::getDarkModeCurrentPageIndicator());
-            
-        }
-        else {
-            g.setColour(ColourPalette::getLightModeCurrentPageIndicator());
-        }
-
-        if ((&buttonInfo.button == &m_HomeBtn && buttonClicked == ButtonType::Home) ||
-            (&buttonInfo.button == &m_NewsBtn && buttonClicked == ButtonType::News) ||
-            (&buttonInfo.button == &m_NotificationBtn && buttonClicked == ButtonType::Notification) ||
-            (&buttonInfo.button == &m_ProductsBtn && buttonClicked == ButtonType::Products) ||
-            (&buttonInfo.button == &m_UserAccountBtn && buttonClicked == ButtonType::UserAccount) ||
-            (&buttonInfo.button == &m_SettingsBtn && buttonClicked == ButtonType::Settings)) {
-            buttonInfo.isActive = true;
-            g.fillRoundedRectangle(buttonInfo.button.getX() + (buttonInfo.button.getWidth() / 2) - 3,
-                                   buttonInfo.button.getY() - 12, 6, 6, 3);
-        }
-    }
-    
-    
+    drawBackground(g); // draws the background shape of the navbar
+    drawCurrentPageIndicator(g); // draws the page indicator
     drawNotificationCounter(); //draws the notification counter and adjusts the size
-    
 }
 
 
@@ -176,6 +124,63 @@ void PageNavigator::drawNotificationCounter() {
         m_NotificationCounter.setVisible(false);
     }
 }
+
+
+//-----------------------------------------------------------------------------------------------
+void PageNavigator::drawCurrentPageIndicator(juce::Graphics& g) {
+    // opened page indicator logic
+       
+        struct ButtonInfo {
+            bool& isActive;
+            ML_ImageButton& button;
+        };
+
+        ButtonInfo buttonInfos[] = {
+            {isHomeBtnActive, m_HomeBtn},
+            {isNewsBtnActive, m_NewsBtn},
+            {isNotificationBtnActive, m_NotificationBtn},
+            {isProductsBtnActive, m_ProductsBtn},
+            {isUserAccountBtnActive, m_UserAccountBtn},
+            {isSettingsBtnActive, m_SettingsBtn}
+        };
+
+        for (const ButtonInfo& buttonInfo : buttonInfos) {
+            buttonInfo.isActive = false;
+            if(juce::Desktop::getInstance().isDarkModeActive() == true){
+                g.setColour(ColourPalette::getDarkModeCurrentPageIndicator());
+                
+            }
+            else {
+                g.setColour(ColourPalette::getLightModeCurrentPageIndicator());
+            }
+
+            if ((&buttonInfo.button == &m_HomeBtn && buttonClicked == ButtonType::Home) ||
+                (&buttonInfo.button == &m_NewsBtn && buttonClicked == ButtonType::News) ||
+                (&buttonInfo.button == &m_NotificationBtn && buttonClicked == ButtonType::Notification) ||
+                (&buttonInfo.button == &m_ProductsBtn && buttonClicked == ButtonType::Products) ||
+                (&buttonInfo.button == &m_UserAccountBtn && buttonClicked == ButtonType::UserAccount) ||
+                (&buttonInfo.button == &m_SettingsBtn && buttonClicked == ButtonType::Settings)) {
+                buttonInfo.isActive = true;
+                g.fillRoundedRectangle(buttonInfo.button.getX() + (buttonInfo.button.getWidth() / 2) - 3,
+                                       buttonInfo.button.getY() - 12, 6, 6, 3);
+            }
+        }
+        
+}
+
+void PageNavigator::drawBackground(juce::Graphics& g) { 
+    if(juce::Desktop::getInstance().isDarkModeActive() == true){
+        g.setColour(ColourPalette::getDarkModeNavBarColour());
+        
+    }
+    else {
+        g.setColour(ColourPalette::getLightModeNavBarColour());
+    }
+    g.fillRoundedRectangle(getLocalBounds().toFloat(), getHeight() / 2);
+
+}
+
+
 //======================================================================================================
 
 

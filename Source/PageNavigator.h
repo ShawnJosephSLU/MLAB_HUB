@@ -62,6 +62,8 @@ private:
     // private Methods
     void setButtonsWithImage();
     void drawNotificationCounter();
+    void drawCurrentPageIndicator(juce::Graphics& g);
+    void drawBackground(juce::Graphics& g);
     
     //============================================================
     
