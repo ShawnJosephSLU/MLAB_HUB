@@ -52,22 +52,8 @@ void MainComponent::paint(juce::Graphics& g)
         ? ColourPalette::getDarkModeBgColour()
         : juce::Colours::white);
 
-    int currentPos = m_HomePage.getScrollPosition();
-    int scrollDelta = currentPos - temp_pos;
+    hideNavbar(); // Hide the navbar when scrolled
 
-    // Define the ratio of scroll to movement (1 pixels per unit of scroll)
-    int movement = 1 * scrollDelta;
-
-    // Calculate the new Y position
-    int newY = m_PageNavigator.getY() + movement;
-
-    // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
-    newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
-
-    m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
-        m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
-
-    temp_pos = currentPos;
 
 }
 
@@ -252,4 +238,125 @@ void MainComponent::openProductsPage() {
     resized();
     
 }
+
+void MainComponent::hideNavbar() { 
+    
+    switch (m_CurrentPageID) {
+        case Home:{
+                int currentPos = m_HomePage.getScrollPosition();
+                int scrollDelta = currentPos - temp_pos;
+            
+                // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+                int movement = 1 * scrollDelta;
+            
+                // Calculate the new Y position
+                int newY = m_PageNavigator.getY() + movement;
+            
+                // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+                newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+            
+                m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                    m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+            
+                temp_pos = currentPos;
+        };break;
+            
+        case Notifications: {
+            int currentPos = m_NotificationsPage.getScrollPosition();
+            int scrollDelta = currentPos - temp_pos;
+
+            // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+            int movement = 1 * scrollDelta;
+
+            // Calculate the new Y position
+            int newY = m_PageNavigator.getY() + movement;
+
+            // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+            newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+            m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+            temp_pos = currentPos;
+        };break;
+            
+        case Products: {
+            int currentPos = m_ProductsPage.getScrollPosition();
+            int scrollDelta = currentPos - temp_pos;
+
+            // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+            int movement = 1 * scrollDelta;
+
+            // Calculate the new Y position
+            int newY = m_PageNavigator.getY() + movement;
+
+            // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+            newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+            m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+            temp_pos = currentPos;
+        };break;
+            
+        case Settings: {
+            int currentPos = m_SettingsPage.getScrollPosition();
+            int scrollDelta = currentPos - temp_pos;
+
+            // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+            int movement = 1 * scrollDelta;
+
+            // Calculate the new Y position
+            int newY = m_PageNavigator.getY() + movement;
+
+            // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+            newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+            m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+            temp_pos = currentPos;
+        };break;
+            
+        case News: {
+            int currentPos = m_NewsPage.getScrollPosition();
+            int scrollDelta = currentPos - temp_pos;
+
+            // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+            int movement = 1 * scrollDelta;
+
+            // Calculate the new Y position
+            int newY = m_PageNavigator.getY() + movement;
+
+            // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+            newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+            m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+            temp_pos = currentPos;
+        };break;
+            
+        case Account: {
+            int currentPos = m_AccountPage.getScrollPosition();
+            int scrollDelta = currentPos - temp_pos;
+
+            // Define the ratio of scroll to movement (1 pixels per unit of scroll)
+            int movement = 1 * scrollDelta;
+
+            // Calculate the new Y position
+            int newY = m_PageNavigator.getY() + movement;
+
+            // Limit the Y position to never go below `minNavLimit` or above `maxNavLimit`
+            newY = juce::jlimit(minNavLimit, maxNavLimit, newY);
+
+            m_PageNavigator.setBounds(m_PageNavigator.getX(), newY,
+                m_PageNavigator.getWidth(), m_PageNavigator.getHeight());
+
+            temp_pos = currentPos;
+        };break;
+  
+    }
+}
+
 

@@ -23,7 +23,9 @@ AccountPage::AccountPage(){
     
 }
 
-
+void AccountPage::paint(juce::Graphics &) {
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
 
 void AccountPage::resized()
 {
@@ -31,7 +33,7 @@ void AccountPage::resized()
     viewport.setBounds(getLocalBounds());
     
     // Set the content size
-    m_ViewedContent.setBounds(0, 0, getWidth(), 800);
+    m_ViewedContent.setBounds(0, 0, getWidth(), 1000);
 
 }
 //========================================================================================

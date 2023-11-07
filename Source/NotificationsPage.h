@@ -27,6 +27,8 @@ public:
     NotificationsPage();
     ~NotificationsPage(){}
     void resized() override;
+    void paint(juce::Graphics &) override;
+    int getScrollPosition() {return m_ScrollPosition;}
 
 private:
     
@@ -58,6 +60,8 @@ private:
     
     NotificationsPageViewedContent m_ViewedContent;
     juce::Viewport viewport;
+    int m_ScrollPosition;
+
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NotificationsPage)
 };

@@ -21,7 +21,9 @@ NewsPage::NewsPage()
     viewport.setScrollBarsShown(false, false);
 }
 
-
+void NewsPage::paint(juce::Graphics &) {
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
 
 void NewsPage::resized()
 {

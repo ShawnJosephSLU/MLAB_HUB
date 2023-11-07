@@ -20,7 +20,9 @@ SettingsPage::SettingsPage()
     viewport.setScrollBarsShown(false, false);
 }
 
-
+void SettingsPage::paint(juce::Graphics &) {
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
 
 void SettingsPage::resized()
 {

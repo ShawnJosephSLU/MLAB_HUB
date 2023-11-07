@@ -22,6 +22,10 @@ public:
     SettingsPage();
     ~SettingsPage() {}
     void resized() override;
+    void paint(juce::Graphics&) override;
+
+    // stores the scroll position of the viewport
+    int getScrollPosition() {return m_ScrollPosition;}
 
 private:
     class SettingsPageViewedContent : public juce::Component {
@@ -46,6 +50,7 @@ private:
 
     SettingsPageViewedContent m_ViewedContent;
     juce::Viewport viewport;
+    int m_ScrollPosition;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SettingsPage)
 };

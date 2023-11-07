@@ -22,6 +22,10 @@ ProductsPage::ProductsPage()
 
 }
 
+void ProductsPage::paint(juce::Graphics &) {
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
+
 void ProductsPage::resized()
 {
     // Set the bounds of the viewport to match the size of the parent component

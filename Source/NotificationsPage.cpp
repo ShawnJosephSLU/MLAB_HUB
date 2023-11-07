@@ -21,7 +21,9 @@ NotificationsPage::NotificationsPage()
     viewport.setScrollBarsShown(false, false);
 }
 
-
+void NotificationsPage::paint(juce::Graphics &) {
+   m_ScrollPosition = viewport.getViewPosition().y;
+}
 
 void NotificationsPage::resized()
 {
