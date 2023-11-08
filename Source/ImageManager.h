@@ -73,6 +73,11 @@ public:
     static juce::Image getLightModeUserAccountBtnImg() {
         return juce::ImageCache::getFromMemory(BinaryData::light_mode_account_page_icon_png, BinaryData::light_mode_account_page_icon_pngSize);
     }
+    
+    // Get the login Page user background image
+    static juce::Image getLoginPageBgImg() {
+        return juce::ImageCache::getFromMemory(BinaryData::LoginBg_jpeg, BinaryData::LoginBg_jpegSize);
+    }
 
     
 private:

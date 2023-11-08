@@ -48,6 +48,8 @@ public:
     void openLoginPage();
     
     void hideNavbar();
+    
+    void login();
 
 private:
     //==============================================================================

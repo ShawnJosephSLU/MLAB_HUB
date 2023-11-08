@@ -65,6 +65,7 @@ MainComponent::MainComponent()
             openLoginPage();
     };
     
+    m_LoginPage.getLoginButton().onClick = [&] {login();};
 }
 
 
@@ -102,10 +103,13 @@ void MainComponent::paint(juce::Graphics& g)
 void MainComponent::resized()
 {
     auto area = getLocalBounds();
-    auto appHeaderArea = area.removeFromTop(120);
+    juce::Rectangle<int> appHeaderArea ;
     auto pageArea = area;
     
+    //if the login page is opened, set the header height to 0,  otherwise set it to 120
+    appHeaderArea = (m_CurrentPageID != PageID::Login) ? area.removeFromTop(120) : area.removeFromTop(0);
     m_AppHeader.setBounds(appHeaderArea);
+    
     
     m_HomePage.setBounds(pageArea);
    
@@ -438,6 +442,34 @@ void MainComponent::hideNavbar() {
 
     }
 }
+
+void MainComponent::login() { 
+    m_CurrentPageID = PageID::Home;
+    m_PageNavigator.getClickedButton() = ButtonType::Home;
+    m_PageNavigator.repaint();
+
+    removeChildComponent(&m_NewsPage);
+    removeChildComponent(&m_ProductsPage);
+    removeChildComponent(&m_AccountPage);
+    removeChildComponent(&m_NotificationsPage);
+    removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
+
+    addAndMakeVisible(m_HomePage);
+    m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+    addAndMakeVisible(m_AppHeader);
+    addAndMakeVisible(m_PageNavigator);
+    addAndMakeVisible(m_HomePage);
+    m_HomePage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+    m_AppHeader.repaint();
+
+    repaint();
+    resized();
+}
+
 
 
 

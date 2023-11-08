@@ -9,6 +9,7 @@
       <FILE id="ALgTdp" name="Networking.h" compile="0" resource="0" file="Source/Networking.h"/>
     </GROUP>
     <GROUP id="{CE8DEEC9-1ECC-ADF0-3DEA-FDACE8440CCC}" name="Resources">
+      <FILE id="MPNUdg" name="LoginBg.jpeg" compile="0" resource="1" file="Resources/LoginBg.jpeg"/>
       <FILE id="kqT7tY" name="mlabHubBtn.png" compile="0" resource="1" file="../../../Library/Mobile Documents/com~apple~CloudDocs/Desktop/ButtonIcons/mlabHubBtn.png"/>
       <GROUP id="{C6ADEDA1-2D6B-BED9-FF7D-9089D9B526C4}" name="NavigatorIcons">
         <FILE id="sKqJYP" name="dark_mode_account_page_icon.png" compile="0"
@@ -54,6 +55,11 @@
       </GROUP>
     </GROUP>
     <GROUP id="{931F1D31-43B0-3FCD-5230-CDA7CD936C84}" name="ViewController">
+      <GROUP id="{1E8C83B7-E780-277D-FE78-7D6D5DD1F3DA}" name="TextButton">
+        <FILE id="ht32IT" name="ML_TextButton.cpp" compile="1" resource="0"
+              file="Source/ML_TextButton.cpp"/>
+        <FILE id="asWeHb" name="ML_TextButton.h" compile="0" resource="0" file="Source/ML_TextButton.h"/>
+      </GROUP>
       <GROUP id="{4B0F51AF-ED6B-0585-4D2C-5B006AA78E0A}" name="AppHeader">
         <FILE id="KrpzAD" name="AppHeader.cpp" compile="1" resource="0" file="Source/AppHeader.cpp"/>
         <FILE id="TtpMEo" name="AppHeader.h" compile="0" resource="0" file="Source/AppHeader.h"/>
