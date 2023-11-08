@@ -35,7 +35,7 @@ public:
 private:
     
     //=========================================================
-    class LoginPageViewedContent  : public juce::Component
+    class LoginPageViewedContent  : public juce::TextButton
     {
     public:
         LoginPageViewedContent();
@@ -50,7 +50,6 @@ private:
 
         juce::ImageComponent m_BackgroundImage;
         juce::Label m_WelcomeLabel;
-        juce::Label m_SubHeading;
         juce::Label m_IncorrectMessage;
         
         juce::TextEditor m_EmailForm;

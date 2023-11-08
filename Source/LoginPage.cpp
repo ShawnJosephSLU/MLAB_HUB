@@ -15,6 +15,7 @@
 //==============================================================================
 LoginPage::LoginPageViewedContent::LoginPageViewedContent()
 {
+    //this->onClick = [&] {hasKeyboardFocus(false);};
     
     setupComponents();
 
@@ -46,7 +47,6 @@ void LoginPage::LoginPageViewedContent::resized()
     // set bounds of Components
     m_WelcomeLabel.setBounds(area.removeFromTop(50));
     
-    m_SubHeading.setBounds(area.removeFromTop(50));
     area.removeFromTop(50);
     m_EmailForm.setBounds(area.removeFromTop(50));
     area.removeFromTop(20);
@@ -59,15 +59,11 @@ void LoginPage::LoginPageViewedContent::resized()
 void LoginPage::LoginPageViewedContent::setupComponents() {
     
     //Welcome
-    m_WelcomeLabel.setText("Welcome", juce::dontSendNotification);
+    m_WelcomeLabel.setText("Sign In", juce::dontSendNotification);
     m_WelcomeLabel.setJustificationType(juce::Justification::centred);
-    m_WelcomeLabel.setFont(juce::Font("Ariel", 50, juce::Font::bold));
+    m_WelcomeLabel.setFont(juce::Font("Ariel", 36, juce::Font::bold));
     
-    m_SubHeading.setText("Keep your MLAB apps updated, verified, and organized with MLAB Hub.",
-                         juce::dontSendNotification);
-    m_SubHeading.setJustificationType(juce::Justification::centred);
-    m_SubHeading.setFont(juce::Font("Ariel", 13, 0));
-    
+
     // textEditors justification
     m_EmailForm.setJustification(juce::Justification::centred);
     m_PasswordForm.setJustification(juce::Justification::centred);
@@ -86,18 +82,23 @@ void LoginPage::LoginPageViewedContent::setupComponents() {
     
     
     //textEditors PlaceHolderText
-    m_EmailForm.setTextToShowWhenEmpty("Email", juce::Colours::white);
-    m_PasswordForm.setTextToShowWhenEmpty("Password", juce::Colours::white);
+    m_EmailForm.setTextToShowWhenEmpty("Email", juce::Colours::grey);
+    m_PasswordForm.setTextToShowWhenEmpty("Password", juce::Colours::grey);
+
+    //TextEditors text size
+    m_EmailForm.setFont(juce::Font("Ariel", 16.0f, 0));
+    m_PasswordForm.setFont(juce::Font("Ariel", 16.0f, 0));
 
     
+    
     //set the password Form to hide text
-    m_PasswordForm.setPasswordCharacter(0x2022); // 0x202 = '•'
+    m_PasswordForm.setPasswordCharacter(0x2022); // 0x2022 = '•'
     
     
     
     
     // set login button text
-    m_LoginButton.setButtonText("Login");
+    m_LoginButton.setButtonText("Sign In");
     
     //set login button background colour
     m_LoginButton.setColour(juce::TextButton::buttonColourId, juce::Colours::transparentBlack);
@@ -115,7 +116,6 @@ void LoginPage::LoginPageViewedContent::setupComponents() {
     // make components visible
     addAndMakeVisible( m_BackgroundImage);
     addAndMakeVisible( m_WelcomeLabel);
-    addAndMakeVisible( m_SubHeading);
     addAndMakeVisible( m_IncorrectMessage);
     addAndMakeVisible( m_EmailForm);
     addAndMakeVisible( m_PasswordForm);
@@ -142,7 +142,7 @@ void LoginPage::resized()
     viewport.setBounds(getLocalBounds());
     
     // Set the content size
-    m_ViewedContent.setBounds(0, 0, getWidth(), 1000);
+    m_ViewedContent.setBounds(0, 0, getWidth(), getHeight() + 80);
 
 }
 
