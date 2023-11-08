@@ -3,40 +3,67 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
-    m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+   
     // Initialize temp_pos to an initial value
         temp_pos = 0;
     
-    addAndMakeVisible(m_PageNavigator);
-    m_CurrentPageID = PageID::Home;
-    addAndMakeVisible(m_HomePage);
-    addAndMakeVisible(m_AppHeader);
-    setSize(600, 400);
+    setSize(600, 400); //set size
+    
+    // opens the initial page
+    if(Networking::isAuthenticated()) {
+        m_CurrentPageID = PageID::Home;
+        addAndMakeVisible(m_HomePage);
+        m_AppHeader.getHeaderLabel().setText("Home", juce::dontSendNotification);
+        addAndMakeVisible(m_AppHeader);
+        addAndMakeVisible(m_PageNavigator);
+    }else {
+        m_CurrentPageID = PageID::Login;
+        addAndMakeVisible(m_LoginPage);
+        m_AppHeader.setVisible(false);
+    }
+    
 
     m_PageNavigator.getHomeButton().onClick = [&] {
-        openHomePage();
+        if(Networking::isAuthenticated()) //checks whether the user is logged in,  only then will the page opened
+            openHomePage();
+        else
+            openLoginPage();
     };
 
     m_PageNavigator.getNewsButton().onClick = [&] {
-        openNewsPage();
+        if(Networking::isAuthenticated())
+            openNewsPage();
+        else
+            openLoginPage();
     };
 
     m_PageNavigator.getNotificationsButton().onClick = [&] {
-        openNotificationsPage();
+        if(Networking::isAuthenticated())
+            openNotificationsPage();
+        else
+            openLoginPage();
     };
 
     m_PageNavigator.getSettingsButton().onClick = [&] {
-        openSettingsPage();
+        if(Networking::isAuthenticated())
+            openSettingsPage();
+        else
+            openLoginPage();
     };
 
     m_PageNavigator.getAccountButton().onClick = [&] {
-        openAccountPage();
+        if(Networking::isAuthenticated())
+            openAccountPage();
+        else
+            openLoginPage();
     };
 
     m_PageNavigator.getProductsButton().onClick = [&] {
-        openProductsPage();
+        if(Networking::isAuthenticated())
+            openProductsPage();
+        else
+            openLoginPage();
     };
-    
     
 }
 
@@ -102,6 +129,9 @@ void MainComponent::resized()
             m_SettingsPage.setBounds(pageArea);
 
         }; break;
+        case PageID::Login : {
+            m_LoginPage.setBounds(pageArea);
+        }
             
     }
     
@@ -129,6 +159,8 @@ void MainComponent::openHomePage() {
     removeChildComponent(&m_AccountPage);
     removeChildComponent(&m_NotificationsPage);
     removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_HomePage);
     m_HomePage.setBounds(getLocalBounds());
@@ -151,6 +183,8 @@ void MainComponent::openNewsPage() {
     removeChildComponent(&m_AccountPage);
     removeChildComponent(&m_NotificationsPage);
     removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_NewsPage);
     m_NewsPage.setBounds(getLocalBounds());
@@ -173,6 +207,8 @@ void MainComponent::openAccountPage() {
     removeChildComponent(&m_NewsPage);
     removeChildComponent(&m_NotificationsPage);
     removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_AccountPage);
     m_AccountPage.setBounds(getLocalBounds());
@@ -195,6 +231,8 @@ void MainComponent::openNotificationsPage() {
     removeChildComponent(&m_NewsPage);
     removeChildComponent(&m_AccountPage);
     removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_NotificationsPage);
     m_NotificationsPage.setBounds(getLocalBounds());
@@ -217,6 +255,8 @@ void MainComponent::openSettingsPage() {
     removeChildComponent(&m_NewsPage);
     removeChildComponent(&m_AccountPage);
     removeChildComponent(&m_NotificationsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_SettingsPage);
     m_SettingsPage.setBounds(getLocalBounds());
@@ -239,6 +279,8 @@ void MainComponent::openProductsPage() {
     removeChildComponent(&m_AccountPage);
     removeChildComponent(&m_NotificationsPage);
     removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_LoginPage);
+
 
     addAndMakeVisible(m_ProductsPage);
     m_ProductsPage.setBounds(getLocalBounds());
@@ -251,7 +293,31 @@ void MainComponent::openProductsPage() {
     
 }
 
-void MainComponent::hideNavbar() { 
+void MainComponent::openLoginPage() {
+    m_CurrentPageID = PageID::Login;
+
+    removeChildComponent(&m_HomePage);
+    removeChildComponent(&m_NewsPage);
+    removeChildComponent(&m_AccountPage);
+    removeChildComponent(&m_NotificationsPage);
+    removeChildComponent(&m_SettingsPage);
+    removeChildComponent(&m_ProductsPage);
+
+
+    addAndMakeVisible(m_LoginPage);
+    m_LoginPage.setBounds(getLocalBounds());
+    
+    m_AppHeader.getHeaderLabel().setText("Sign In", juce::dontSendNotification);
+    m_AppHeader.getHeaderLabel().setJustificationType(juce::Justification::centred);
+    m_AppHeader.repaint();
+
+    repaint();
+    resized();
+}
+
+
+
+void MainComponent::hideNavbar() {
     
     switch (m_CurrentPageID) {
         case Home:{
@@ -368,7 +434,10 @@ void MainComponent::hideNavbar() {
             temp_pos = currentPos;
         };break;
   
+        case Login: m_PageNavigator.setVisible(false); break;
+
     }
 }
+
 
 

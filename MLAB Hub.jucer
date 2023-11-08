@@ -75,6 +75,10 @@
               file="Source/ML_ImageButton.h"/>
       </GROUP>
       <GROUP id="{D8519EFA-46B2-7105-48DD-5435F31EE5B4}" name="Pages">
+        <GROUP id="{25B3D35E-ACE5-322F-CE26-33FB43BB2BBF}" name="LoginPage">
+          <FILE id="EJOgiZ" name="LoginPage.cpp" compile="1" resource="0" file="Source/LoginPage.cpp"/>
+          <FILE id="erWPIn" name="LoginPage.h" compile="0" resource="0" file="Source/LoginPage.h"/>
+        </GROUP>
         <GROUP id="{F6BF19E3-5082-E297-2EA1-8C447FCFDDA2}" name="NotificationsPage">
           <FILE id="QvS1uH" name="NotificationsPage.cpp" compile="1" resource="0"
                 file="Source/NotificationsPage.cpp"/>

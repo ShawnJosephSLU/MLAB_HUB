@@ -10,13 +10,14 @@
 #include "NotificationsPage.h"
 #include "AppHeader.h"
 #include "Networking.h"
+#include "LoginPage.h"
 
 
 //==============================================================================
 
 //says which page is opened in the app
 enum PageID {
-    Home, News, Account, Notifications, Settings, Products
+    Home, News, Account, Notifications, Settings, Products, Login
 };
 
 class MainComponent  : public juce::Component
@@ -44,6 +45,8 @@ public:
 
     void openProductsPage();
     
+    void openLoginPage();
+    
     void hideNavbar();
 
 private:
@@ -59,10 +62,13 @@ private:
     SettingsPage m_SettingsPage;
     NotificationsPage m_NotificationsPage;
     AppHeader m_AppHeader;
+    LoginPage m_LoginPage;
+    
     
    
     int minNavLimit, maxNavLimit;
     int temp_pos; 
+    
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

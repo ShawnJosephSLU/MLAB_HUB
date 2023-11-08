@@ -16,9 +16,14 @@ public:
     static int getNotificationValue();
     static void incrementNotificationValue();
     static void decrementNotificationValue();
+    
+    //Authentication
+    static bool isAuthenticated();
+    static void authenticateUser(juce::String& email, juce::String& password);
 
 private:
     static int m_NumberOfNotifications; // TODO: this should be passed from the Database;
+    static bool m_isAuthenticated; // TODO: must be passed from Database
 };
 
 
